@@ -1,20 +1,19 @@
 terraform {
   required_providers {
     aws = {
-      source = "hashicorp/aws"
-      version = "5.73.0"
+      source  = "hashicorp/aws"
+      version = "~> 5.0"
     }
   }
-
+ 
   backend "s3" {
-    bucket = "81s-remote-state-dev"
-    key    = "expense-alb-ingress"
+    bucket = "dev-statefile-backend"
+    key    = "expense-app-alb-dev"
     region = "us-east-1"
-    dynamodb_table = "81s-locking-dev"
   }
 }
 
+# Configure the AWS Provider
 provider "aws" {
-  # Configuration options
   region = "us-east-1"
 }

@@ -62,7 +62,7 @@ resource "aws_cloudfront_distribution" "expense" {
   restrictions {
     geo_restriction {
       restriction_type = "whitelist"
-      locations        = ["IN", "CA", "GB", "DE"]
+      locations        = ["IN", "CA", "GB", "DE", "US"]
     }
   }
 
